@@ -1,0 +1,159 @@
+// Variables
+
+$gray-000: #f4f5f7 !default;
+$gray-100: #f2f2f7 !default;
+$gray-200: #dee2e6 !default;
+$gray-300: #7d7e9c !default;
+$gray-400: #2b333e !default;
+$gray-500: #252c35 !default;
+
+$blue: #3281e5 !default;
+$dark-blue: #1a1f2c !default;
+$lightblue: #eeeffc !default;
+$peach: #c59c8d !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #146431 !default;
+$light-green: #8ed429 !default;
+$cyan: #92baee !default;
+$bluegray: #a1aac4 !default;
+$dark-bluegray: #414b68 !default;
+$white: #ffffff !default;
+
+$primary: $dark-blue !default;
+$secondary: $peach !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$dark-text: $dark-blue !default;
+$normal-text: $dark-blue !default;
+$light-text: $bluegray !default;
+$link: $dark-blue !default;
+
+@mixin rounded-borders($round) {
+  -webkit-border-radius: $round;
+  -moz-border-radius: $round;
+  border-radius: $round;
+}
+
+$default-font: "Roboto", sans-serif;
+$secondary-font: "Libre Caslon Text", serif;
+
+body {
+  background-color: $lightblue;
+  font-size: 16px;
+  color: $normal-text;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.025rem;
+}
+body,
+html {
+  height: 100%;
+}
+a,
+a:link,
+a:visited {
+  color: $link;
+  text-decoration: none;
+  border-bottom: 1px dotted $link;
+}
+
+a:hover,
+a:focus {
+  color: $secondary;
+  text-decoration: none;
+  outline: none;
+  border-bottom: 1px dotted $secondary;
+}
+input[type="text"] {
+  width: 80px;
+  border-width: 0;
+  background-color: #fff;
+  padding: 8px 12px;
+  &.disabled{
+    opacity: 0.4;
+  }
+}
+input[type="checkbox"] {
+  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+  
+}
+h1 {
+  font-family: $secondary-font;
+}
+h3 {
+  font-family: $secondary-font;
+  font-size: 18px;
+}
+h4 {
+  font-family: $default-font;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.table-row {
+  display: flex;
+  &.title {
+    padding-bottom: 24px;
+  }
+  &.feature-list {
+    border-bottom: 1px dotted $gray-300;
+    padding: 10px 0;
+    div{
+      font-weight: bold;
+    }
+    div:first-child{
+      font-weight: normal;
+    }
+  }
+  & > div {
+    padding: 5px 25px;
+  }
+  & > div:first-child {
+    text-align: right;
+    width: 375px;
+  }
+  & > div:nth-child(2),
+  & > div:nth-child(3){
+    width: 245px;
+  }
+  & > div:nth-child(4) {
+    width: 375px;
+  }
+}
+.price-calculator {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  .title-helper-text {
+    font-size: 18px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .total-members {
+    div {
+      font-weight: bold;
+      padding: 10px 25px;
+    }
+  }
+  .total-price {
+    div {
+      font-weight: bold;
+      font-size: 22px;
+      padding: 10px 25px;
+    }
+  }
+  .sub-title {
+    div {
+      padding: 40px 25px 10px;
+    }
+  }
+}

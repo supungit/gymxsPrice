@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pricing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="assets/css/main.css" rel="stylesheet" />
+
+</head>
+
+<body onload="hideElements()">
+	<div class="price-calculator">
+		<div class="section-header">
+			<h1>Pricing</h1>
+			<p class="title-helper-text"></p>
+			yeah..play around with our calculator. Please enter number of gym members for both RFID and Mobile solutions
+			and
+			see what benifits you the best
+		</div>
+		<div class="calculator-wrapper">
+			<div class="table-wrapper">
+				<div class="table-row title">
+					<div>
+						<h4>Number of members</h4>
+					</div>
+					<div>
+						<h3>Scenario 1</h3>
+						<input id="s1" type="checkbox" onclick="inputEnabler('s1','i1','one')" /> Include mobile app
+					</div>
+					<div>
+						<h3>Scenario 2</h3>
+						<input id="s2" type="checkbox" checked onclick="inputEnabler('s2','i2','two')" /> Include mobile app
+					</div>
+					<div>
+						<h3><input type="checkbox" onclick="enableForcast(this)" />Future Scenario for your Gym</h3>
+						<div id='forcast-20'><input type="checkbox" checked  /> Include mobile app</div>
+					</div>
+				</div>
+				<div class="table-row">
+					<div>
+						Default set (any type)
+					</div>
+					<div><input type="text" class="disabled" value="500" disabled /></div>
+					<div><input type="text" class="disabled" value="500" disabled /></div>
+					<div id='forcast-0'><input type="text" class="disabled" value="500" disabled /></div>
+				</div>
+				<div class="table-row">
+					<div>
+						Additional RFID card members
+					</div>
+					<div><input id="r1" value="0" type="text" onblur="setTotal('tot1','tot2-1','i1','r1',this,'totp-1','basep-1','one')" /></div>
+					<div><input id="r2" value="0" type="text" onblur="setTotal('tot2','tot2-2','i2','r2',this,'totp-2','basep-2','two')"  /></div>
+					<div id='forcast-1'><input type="text" /></div>
+				</div>
+				<div class="table-row">
+					<div>
+						Additional Mobile card members
+					</div>
+					<div><input id="i1" class="disabled" onblur="setTotal('tot1','tot3-1','i1','r1',this,'totp-1','basep-1','one')" value="0" disabled type="text" /></div>
+					<div><input id="i2" value="0" onblur="setTotal('tot2','tot3-2','i2','r2',this,'totp-2','basep-2','two')" type="text" /></div>
+					<div id='forcast-2'><input type="text" /></div>
+				</div>
+				<div class="table-row total-members">
+					<div>
+						Total Members
+					</div>
+					<div id="tot1">500</div>
+					<div id="tot2">500</div>
+					<div id='forcast-3'>500</div>
+				</div>
+				<div class="table-row total-price">
+					<div>
+						Total Price Per Month
+					</div>
+					<div id="totp-1">£ 200</div>
+					<div id="totp-2">£ 200</div>
+					<div id='forcast-4'>£ 200</div>
+				</div>
+				<div class="table-row sub-title">
+					<div>
+						<h4>Features</h4>
+					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						RFID card support
+					</div>
+					<div>YES</div>
+					<div>YES</div>
+					<div id='forcast-5'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Mobile cards
+					</div>
+					<div id = "rf-1">NO</div>
+					<div id = "mb-1">YES</div>
+					<div id='forcast-6'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Mobile app with gym page
+					</div>
+					<div id = "rf-2">NO</div>
+					<div id = "mb-2">YES</div>
+					<div id='forcast-7'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Presence control
+					</div>
+					<div id = "rf-3" >NO</div>
+					<div id = "mb-3">YES</div>
+					<div id='forcast-8'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Free trials for potential members
+					</div>
+					<div id = "rf-4">NO</div>
+					<div id = "mb-4">YES</div>
+					<div id='forcast-9'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						24/7 support
+					</div>
+					<div id = "rf-5">NO</div>
+					<div id = "mb-5">YES</div>
+					<div id='forcast-10'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Annual preventative maintenance visit
+					</div>
+					<div id = "rf-6">NO</div>
+					<div id = "mb-6">YES</div>
+					<div id='forcast-11'>YES</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Engineer response - next business day
+					</div>
+					<div id = "rf-7">NO</div>
+					<div id = "mb-7">YES</div>
+					<div id='forcast-12'>YES</div>
+				</div>
+				<div class="table-row sub-title">
+					<div>
+						<h4>Cost breakdown</h4>
+					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						first 500 members (Any type)
+					</div>
+					<div id="basep-1">£ 200</div>
+					<div id="basep-2">£ 200</div>
+					<div id='forcast-13'>£ 200</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Additional RFID card members
+					</div>
+					<div id='tot2-1'>£ 0 </div>
+					<div id='tot2-2'>£ 0</div>
+					<div id='forcast-14'>£ 0</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Additional Mobile card members
+					</div>
+					<div id="tot3-1">£ 0</div>
+					<div id="tot3-2">£ 0</div>
+					<div id='forcast-15'>£ 0</div>
+				</div>
+				<div class="table-row sub-title">
+					<div>
+						<h4>Additional Services</h4>
+					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Engineer response - 8 hour on site attendance
+
+					</div>
+					<div><input type="checkbox">£ 10</div>
+					<div><input type="checkbox">£ 10</div>
+					<div id='forcast-16'><input type="checkbox">£ 10</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Engineer response - 4 hour on site attendance
+
+					</div>
+					<div><input type="checkbox">£ 10</div>
+					<div><input type="checkbox">£ 10</div>
+					<div id='forcast-17'><input type="checkbox">£ 10</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						All-inclusive call out and labour package
+					</div>
+					<div><input type="checkbox">£ 10</div>
+					<div><input type="checkbox">£ 10</div>
+					<div id='forcast-18'><input type="checkbox">£ 10</div>
+				</div>
+				<div class="table-row feature-list">
+					<div>
+						Concierge service - (standby + per hour)
+					</div>
+					<div><input type="checkbox">£ 10</div>
+					<div><input type="checkbox">£ 10</div>
+					<div id='forcast-19'><input type="checkbox">£ 10</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/prototype.js"></script>
+</body>
+
+</html>
